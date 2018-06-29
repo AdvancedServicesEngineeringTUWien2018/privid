@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: ./facerec/.
+    ports:
+      - "8080:8080"
+  frontend:
+    build: ./frontend/.
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - web
